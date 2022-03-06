@@ -25,7 +25,7 @@ Tested with Unity 2021.1.2f1f.
 ```
 $ gsutil mb -p <gcp_project> gs://<your-bucket-name>
 $ gsutil defacl set public-read gs://<your-bucket-name>
-$ gsutil -m -h "Content-Type:application/json" rsync -r ./output gs://<your-bucket-name>/packages
+$ gsutil -m -h "Content-Type:application/json" -h "Cache-Control: no-cache" rsync -r ./output gs://<your-bucket-name>/packages
 ```
 
 Finally, you can use the bucket public url as Unity registry URL for your own Scoped Registry:
